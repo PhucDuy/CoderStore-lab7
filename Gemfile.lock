@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/harley/carrierwave-postgresql.git
+  revision: 22b4cb8026e9915be0792d82a7ca5ff5dafff240
+  branch: update-carrierwave-version
+  specs:
+    carrierwave-postgresql (0.2.1)
+      carrierwave (>= 0.10.0, < 2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -43,6 +51,14 @@ GEM
     autoprefixer-rails (6.1.1)
       execjs
       json
+    aws-sdk (2.10.13)
+      aws-sdk-resources (= 2.10.13)
+    aws-sdk-core (2.10.13)
+      aws-sigv4 (~> 1.0)
+      jmespath (~> 1.0)
+    aws-sdk-resources (2.10.13)
+      aws-sdk-core (= 2.10.13)
+    aws-sigv4 (1.0.1)
     bcrypt (3.1.11)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
@@ -66,6 +82,9 @@ GEM
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
+    carrierwave-aws (1.1.0)
+      aws-sdk (~> 2.0)
+      carrierwave (>= 0.7, < 2.0)
     childprocess (0.5.8)
       ffi (~> 1.0, >= 1.0.11)
     coderay (1.1.0)
@@ -86,6 +105,10 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
+    dotenv (2.2.1)
+    dotenv-rails (2.2.1)
+      dotenv (= 2.2.1)
+      railties (>= 3.2, < 5.2)
     erubis (2.7.0)
     execjs (2.6.0)
     factory_girl (4.7.0)
@@ -118,6 +141,7 @@ GEM
     jbuilder (2.5.0)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
+    jmespath (1.3.1)
     jquery-rails (4.1.1)
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
@@ -149,6 +173,8 @@ GEM
       shellany (~> 0.0)
     orm_adapter (0.5.0)
     pg (0.18.4)
+    postgresql_lo_streamer (1.1.0)
+      rails (>= 4.0)
     pry (0.10.4)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -283,9 +309,12 @@ DEPENDENCIES
   byebug
   capybara (~> 2.7.1)
   carrierwave
+  carrierwave-aws
+  carrierwave-postgresql!
   coffee-rails (~> 4.2)
   database_cleaner
   devise
+  dotenv-rails
   factory_girl_rails
   faker
   guard-rspec
@@ -295,6 +324,7 @@ DEPENDENCIES
   launchy
   listen (~> 3.0.5)
   pg
+  postgresql_lo_streamer
   puma (~> 3.0)
   rails (~> 5.0, >= 5.0.2)
   rails_12factor
